@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import aboutImg from '../assets/images/about-portrait.png'
+import aboutImg from '../assets/images/about-portrait.jpg'
 
 const avatars = [
     { color: 'bg-amber-400', initials: 'JD' },
@@ -30,7 +30,7 @@ export default function About() {
                     viewport={{ once: true, amount: 0.5 }}
                 >
                     <span className="w-8 h-px bg-accent" />
-                    About Me
+                    About Us
                 </motion.span>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -45,16 +45,16 @@ export default function About() {
                             variants={fadeUp}
                             className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.5rem] text-slate leading-[1.1] tracking-tight"
                         >
-                            Engineering
+                            The architecture
                             <br />
-                            <span className="text-stroke">scalable solutions</span>
+                            <span className="text-stroke">behind the</span>
                             <br />
-                            for the modern web
+                            seamless flow.
                         </motion.h2>
 
                         <motion.p variants={fadeUp} className="mt-8 text-slate/50 text-base leading-relaxed max-w-lg">
-                            Combining deep technical skills with design intuition to craft digital products that are
-                            both powerful under the hood and delightful to use.
+                            At WeaveFlow, we don&apos;t just write code; we engineer solutions. Our philosophy is built
+                            on weaving complex backend logic with lightweight, responsive frontends.
                         </motion.p>
 
                         {/* Overlapping avatars */}
@@ -63,7 +63,7 @@ export default function About() {
                                 {avatars.map((a, i) => (
                                     <motion.div
                                         key={i}
-                                        className={`w-12 h-12 rounded-full ${a.color} border-[3px] border-white flex items-center justify-center text-white text-xs font-bold shadow-lg relative`}
+                                        className={`w-14 h-14 rounded-full ${a.color} border-4 border-white flex items-center justify-center text-white text-xs font-bold shadow-lg relative`}
                                         style={{ zIndex: avatars.length - i }}
                                         initial={{ opacity: 0, x: -10 }}
                                         whileInView={{ opacity: 1, x: 0 }}
@@ -80,18 +80,14 @@ export default function About() {
                             </div>
                         </motion.div>
 
-                        {/* Skill pills */}
-                        <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-2">
-                            {['React', 'Node.js', 'Laravel', 'TypeScript', 'PostgreSQL', 'AWS'].map((skill) => (
-                                <motion.span
-                                    key={skill}
-                                    className="text-xs font-medium text-slate/60 bg-offwhite px-4 py-2 rounded-full border border-gray-200 cursor-default"
-                                    whileHover={{ borderColor: 'rgba(249,115,22,0.3)', color: '#F97316', y: -2 }}
-                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                >
-                                    {skill}
-                                </motion.span>
-                            ))}
+                        {/* Core Stack — clean inline list */}
+                        <motion.div variants={fadeUp} className="mt-8 border-t border-slate/10 pt-6">
+                            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-slate/30 mb-3">
+                                Core Stack
+                            </p>
+                            <p className="text-sm text-slate/60 font-medium leading-relaxed">
+                                React &middot; Node.js &middot; Laravel &middot; TypeScript &middot; PostgreSQL<span className="text-accent">.</span>
+                            </p>
                         </motion.div>
                     </motion.div>
 
@@ -123,10 +119,10 @@ export default function About() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                                         </svg>
                                     </div>
-                                    <span className="text-xs font-semibold text-slate/40 uppercase tracking-wider">Track Record</span>
+                                    <span className="text-xs font-semibold text-slate/40 uppercase tracking-wider">Our Promise</span>
                                 </div>
-                                <p className="font-heading font-bold text-5xl text-slate">50<span className="text-accent">+</span></p>
-                                <p className="text-sm text-slate/50 mt-1">Projects Successfully Delivered</p>
+                                <p className="font-heading font-bold text-2xl text-slate leading-snug">End-to-End<br /><span className="text-accent">Digital Solutions</span></p>
+                                <p className="text-sm text-slate/50 mt-2">Architecture &middot; Design &middot; Deployment</p>
                             </div>
                         </motion.div>
 

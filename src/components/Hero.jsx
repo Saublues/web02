@@ -18,8 +18,8 @@ const slideRight = {
 }
 
 const stats = [
-    { target: 5, suffix: '+', label: 'Years Experience' },
-    { target: 50, suffix: '+', label: 'Projects Delivered' },
+    { target: 50, suffix: '+', label: 'Projects Shipped' },
+    { target: 99, suffix: '%', label: 'Client Satisfaction' },
     { target: 30, suffix: '+', label: 'Happy Clients' },
 ]
 
@@ -27,7 +27,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="blueprint-bg relative min-h-screen flex items-center pt-28 lg:pt-24 overflow-hidden"
+            className="blueprint-bg relative min-h-screen flex items-center pt-32 lg:pt-28 overflow-hidden"
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
@@ -39,11 +39,10 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                     >
-                        {/* Label */}
-                        <motion.div variants={fadeUp} className="mb-6">
-                            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 px-4 py-1.5 rounded-full">
-                                <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-                                Software Engineering · IPB University
+                        {/* Editorial label — tracked uppercase, no pill */}
+                        <motion.div variants={fadeUp} className="mb-8">
+                            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate/40">
+                                WeaveFlow &mdash; Digital Solutions
                             </span>
                         </motion.div>
 
@@ -52,27 +51,27 @@ export default function Hero() {
                             variants={fadeUp}
                             className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] leading-[0.9] tracking-tighter text-slate"
                         >
-                            Architecting
+                            Weaving Systems.
                         </motion.h1>
                         <motion.h1
                             variants={fadeUp}
                             className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] leading-[0.9] tracking-tighter text-stroke mt-1"
                         >
-                            The Future
+                            Flowing Experiences.
                         </motion.h1>
 
-                        {/* Subtitle */}
+                        {/* Subtitle — clean editorial */}
                         <motion.p
                             variants={fadeUp}
-                            className="mt-8 max-w-md text-base lg:text-lg text-slate/60 font-body leading-relaxed"
+                            className="mt-8 max-w-md text-base lg:text-lg text-slate/50 font-body leading-relaxed"
                         >
-                            Software Engineering student at IPB University, specializing
-                            in Full-Stack Web Development&nbsp;&mdash; building performant,
-                            scalable digital products from concept to deployment.
+                            WeaveFlow Studio engineers robust digital solutions. We merge
+                            high-performance architecture with flawless design to build
+                            scalable web applications.
                         </motion.p>
 
-                        {/* CTA */}
-                        <motion.div variants={fadeUp} className="mt-10 flex items-center gap-6">
+                        {/* CTA — clean, no decorative scroll indicator */}
+                        <motion.div variants={fadeUp} className="mt-10 md:space-x-4 space-y-4">
                             <motion.a
                                 href="#projects"
                                 className="group inline-flex items-center gap-3 bg-slate text-white font-semibold px-8 py-4 rounded-full"
@@ -80,31 +79,41 @@ export default function Hero() {
                                 whileTap={{ scale: 0.98 }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                             >
-                                View My Work
+                                Start a Project
                                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </motion.a>
-                            <div className="hidden sm:flex items-center gap-2 text-slate/30">
-                                <div className="w-12 h-px bg-slate/20" />
-                                <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
-                            </div>
+                            <motion.a
+                                href="#about"
+                                className="group inline-flex items-center gap-3 border-2 border-slate/20 text-slate font-semibold px-8 py-4 rounded-full hover:border-slate/40 transition-colors"
+                                whileHover={{ scale: 1.03, y: -2 }}
+                                whileTap={{ scale: 0.98 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                            >
+                                Our Capabilities
+                            </motion.a>
                         </motion.div>
 
-                        {/* ── Animated Stats ── */}
-                        <motion.div variants={fadeUp} className="mt-14 flex items-center gap-8 lg:gap-10">
+                        {/* ── Stats — editorial grid with 1px borders ── */}
+                        <motion.div
+                            variants={fadeUp}
+                            className="mt-16 grid grid-cols-3 border border-slate/10 rounded-2xl overflow-hidden"
+                        >
                             {stats.map((s, i) => (
-                                <div key={s.label} className="flex items-center gap-8 lg:gap-10">
-                                    {i > 0 && <div className="w-px h-12 bg-slate/10 -ml-8 lg:-ml-10" />}
-                                    <div>
-                                        <AnimatedCounter
-                                            target={s.target}
-                                            suffix={s.suffix}
-                                            duration={2000}
-                                            className="font-heading font-bold text-4xl lg:text-5xl text-slate"
-                                        />
-                                        <p className="text-xs text-slate/50 mt-1">{s.label}</p>
-                                    </div>
+                                <div
+                                    key={s.label}
+                                    className={`py-6 px-5 ${i > 0 ? 'border-l border-slate/10' : ''}`}
+                                >
+                                    <AnimatedCounter
+                                        target={s.target}
+                                        suffix={s.suffix}
+                                        duration={2000}
+                                        className="font-heading font-bold text-3xl lg:text-4xl text-slate"
+                                    />
+                                    <p className="text-[10px] tracking-[0.15em] uppercase text-slate/40 mt-2 font-medium">
+                                        {s.label}
+                                    </p>
                                 </div>
                             ))}
                         </motion.div>
@@ -118,53 +127,26 @@ export default function Hero() {
                         animate="visible"
                     >
                         <div className="relative">
+                            {/* Hero image — asymmetric radius */}
                             <div
                                 className="overflow-hidden shadow-2xl shadow-slate/15"
-                                style={{ borderRadius: '120px 24px 80px 24px' }}
+                                style={{ borderRadius: '0 120px 0 80px' }}
                             >
                                 <img
                                     src={heroImg}
-                                    alt="Software Engineer at work"
+                                    alt="Digital studio at work"
                                     className="w-full h-[420px] lg:h-[540px] object-cover"
                                 />
                             </div>
 
-                            {/* Decorative circle */}
-                            <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full border-2 border-accent/20 flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                                    <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                                    </svg>
-                                </div>
+                            {/* Decorative — minimal code icon */}
+                            <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full border border-slate/10 flex items-center justify-center bg-white shadow-lg">
+                                <svg className="w-7 h-7 text-slate/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                                </svg>
                             </div>
 
-                            {/* Floating pills */}
-                            <motion.span
-                                className="absolute top-8 -left-3 lg:-left-6 inline-flex items-center gap-1.5 bg-white shadow-xl shadow-slate/10 text-xs font-semibold text-slate px-4 py-2.5 rounded-full border border-gray-100"
-                                animate={{ y: [0, -8, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                            >
-                                <span className="w-2 h-2 bg-green-400 rounded-full" />
-                                Full-Stack
-                            </motion.span>
-
-                            <motion.span
-                                className="absolute top-1/3 -right-2 lg:-right-4 inline-flex items-center gap-1.5 bg-accent text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl shadow-accent/25"
-                                animate={{ y: [0, -8, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                            >
-                                Web Architecture
-                            </motion.span>
-
-                            <motion.span
-                                className="absolute bottom-24 -left-2 lg:-left-5 inline-flex items-center gap-1.5 bg-slate text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl shadow-slate/25"
-                                animate={{ y: [0, -8, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                            >
-                                React &bull; Node &bull; Laravel
-                            </motion.span>
-
-                            {/* Available card */}
+                            {/* Availability card — clean, no colored dots */}
                             <motion.div
                                 className="absolute -bottom-6 left-4 lg:left-8 z-20"
                                 initial={{ opacity: 0, y: 20 }}
@@ -172,26 +154,20 @@ export default function Hero() {
                                 transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
                             >
                                 <motion.div
-                                    className="bg-white rounded-2xl shadow-2xl shadow-slate/15 px-5 py-4 flex items-center gap-3 border border-gray-100 min-w-[220px]"
-                                    whileHover={{ y: -3, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)' }}
+                                    className="bg-white rounded-2xl shadow-2xl shadow-slate/10 px-6 py-4 flex items-center gap-4 border border-slate/10 min-w-[220px]"
+                                    whileHover={{ y: -3, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.12)' }}
                                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                                 >
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-                                        <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
+                                    <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
                                     <div>
-                                        <p className="text-sm font-semibold text-slate">Available for Work</p>
-                                        <p className="text-[11px] text-slate/40">Open to new opportunities</p>
+                                        <p className="text-sm font-semibold text-slate">WeaveFlow is taking on new projects.</p>
+                                        <p className="text-[10px] text-slate/40 tracking-wide uppercase">Available</p>
                                     </div>
-                                    <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse ml-auto shrink-0" />
                                 </motion.div>
                             </motion.div>
                         </div>
 
-                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/5 rounded-full blur-2xl" />
-                        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
+                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-slate/[0.02] rounded-full blur-2xl" />
                     </motion.div>
                 </div>
             </div>

@@ -5,9 +5,10 @@ import Tilt from 'react-parallax-tilt'
 import Header from '../components/Header'
 import project1 from '../assets/images/project-1.png'
 import project2 from '../assets/images/project-2.png'
-import project3 from '../assets/images/project-3.png'
+import resiklaundry from '../assets/images/resik-laundry.png'
+import suryakshana from '../assets/images/suryakshana.jpeg'
 import heroImg from '../assets/images/hero-portrait.png'
-import aboutImg from '../assets/images/about-portrait.png'
+import aboutImg from '../assets/images/about-portrait.jpg'
 
 /* ── Data ─────────────────────────────────────────── */
 const allProjects = [
@@ -34,42 +35,22 @@ const allProjects = [
     {
         id: 3,
         title: 'Resik Laundry',
-        tag: 'React + Node.js',
-        category: 'Full-Stack',
-        description: 'Automated Laundry Booking System — streamlined scheduling, tracking, and payment for campus laundry services.',
-        image: project3,
+        tag: 'React + Google Apps Script',
+        category: 'Frontend',
+        description: 'Serverless Laundry Booking UI — A lightweight, interactive frontend application that leverages Google Apps Script to seamlessly sync scheduling and order data directly into a spreadsheet.',
+        image: resiklaundry,
         span: '',
         radius: '24px 24px 80px 24px',
     },
     {
         id: 4,
-        title: 'DataVault Analytics',
-        tag: 'Python + React',
-        category: 'Data',
-        description: 'Real-time data pipeline dashboard for enterprise analytics and decision-making.',
-        image: heroImg,
-        span: '',
-        radius: '80px 24px 24px 24px',
-    },
-    {
-        id: 5,
-        title: 'MediConnect',
-        tag: 'Node.js + Vue',
+        title: 'Surya Kshana',
+        tag: 'Python',
         category: 'Frontend',
-        description: 'Healthcare platform connecting patients with providers through secure telemedicine.',
-        image: aboutImg,
+        description: 'Suryakshana: CLI Railway Management — A Python terminal appslication featuring role-based access for efficient train schedule tracking, route monitoring, and administrative data entry.',
+        image: suryakshana,
         span: 'md:col-span-2',
         radius: '24px 60px 60px 24px',
-    },
-    {
-        id: 6,
-        title: 'DevOps Board',
-        tag: 'TypeScript + AWS',
-        category: 'Frontend',
-        description: 'Cloud infrastructure monitoring dashboard with real-time alerts and CI/CD metrics.',
-        image: project1,
-        span: '',
-        radius: '60px 60px 24px 24px',
     },
 ]
 

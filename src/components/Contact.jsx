@@ -6,9 +6,9 @@ import { useRef, useState } from 'react'
    ──────────────────────────────────────────────────── */
 const channels = [
     {
-        name: 'Shoot me an email',
-        subtitle: 'sausan@apps.ipb.ac.id',
-        href: 'mailto:sausan@apps.ipb.ac.id',
+        name: 'Shoot us an email',
+        subtitle: 'sausanasma123@gmail.com',
+        href: 'mailto:sausanasma123@gmail.com',
         gradient: 'from-blue-500/10 to-indigo-500/10',
         hoverShadow: '0 25px 60px -12px rgba(99,102,241,0.25)',
         accentColor: '#6366f1',
@@ -21,7 +21,7 @@ const channels = [
     {
         name: 'Drop a message',
         subtitle: 'Fast response guaranteed',
-        href: 'https://wa.me/6281234567890',
+        href: 'https://wa.me/6281282315879',
         gradient: 'from-emerald-500/10 to-green-500/10',
         hoverShadow: '0 25px 60px -12px rgba(16,185,129,0.25)',
         accentColor: '#10b981',
@@ -33,8 +33,8 @@ const channels = [
     },
     {
         name: 'Follow my journey',
-        subtitle: '@sausan.dev',
-        href: 'https://instagram.com/sausan.dev',
+        subtitle: '@sausanasma',
+        href: 'https://instagram.com/sausanasma',
         gradient: 'from-pink-500/10 to-rose-500/10',
         hoverShadow: '0 25px 60px -12px rgba(244,63,94,0.25)',
         accentColor: '#f43f5e',
@@ -206,11 +206,11 @@ export default function Contact() {
                             something
                         </span>
                         <br />
-                        <span className="text-slate">together.</span>
+                        <span className="text-slate">scalable.</span>
                     </h2>
 
                     <p className="mt-6 max-w-md mx-auto text-base text-slate/50 leading-relaxed">
-                        Have a project in mind or just want to say hi? Pick your preferred channel and let&apos;s connect.
+                        Have a project in mind? Pick your preferred channel and let&apos;s connect.
                     </p>
                 </motion.div>
 
@@ -227,9 +227,8 @@ export default function Contact() {
                     variants={headingVariants}
                 >
                     {[
-                        { label: 'Gh', href: 'https://github.com/sausan', full: 'GitHub' },
-                        { label: 'Li', href: 'https://linkedin.com/in/sausan', full: 'LinkedIn' },
-                        { label: 'X', href: 'https://x.com/sausan', full: 'X' },
+                        { label: 'Gh', href: 'https://github.com/saublues', full: 'GitHub' },
+                        { label: 'Li', href: 'https://linkedin.com/in/sausanasma', full: 'LinkedIn' },
                     ].map((s) => (
                         <motion.a
                             key={s.full}
@@ -249,8 +248,8 @@ export default function Contact() {
 
                 {/* ── Watermark ────────────────────────────── */}
                 <motion.div className="mt-20 overflow-hidden" variants={headingVariants}>
-                    <p className="watermark-text font-heading font-bold text-[4rem] md:text-[6rem] lg:text-[8rem] text-center leading-none tracking-tighter whitespace-nowrap select-none">
-                        [ SOFTWARE ENGINEER ]
+                    <p className="watermark-text font-heading font-bold text-[2rem] md:text-[4rem] lg:text-[6rem] text-center leading-none tracking-tighter whitespace-nowrap select-none">
+                        [ WEAVEFLOW STUDIO ]
                     </p>
                 </motion.div>
 
@@ -258,7 +257,7 @@ export default function Contact() {
                 <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div>
                         <p className="font-heading font-bold text-lg text-slate">
-                            Sausan<span className="text-accent">.</span>dev
+                            WeaveFlow<span className="text-accent">.</span>
                         </p>
                         <p className="text-xs text-slate/40 mt-1">
                             Building the digital future, one line at a time.
