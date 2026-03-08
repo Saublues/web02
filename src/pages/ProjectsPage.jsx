@@ -7,6 +7,7 @@ import project1 from '../assets/images/project-1.png'
 import project2 from '../assets/images/project-2.png'
 import resiklaundry from '../assets/images/resik-laundry.png'
 import suryakshana from '../assets/images/suryakshana.jpeg'
+import henmultimedia from '../assets/images/HenMultimedia.jpeg'
 import heroImg from '../assets/images/hero-portrait.png'
 import aboutImg from '../assets/images/about-portrait.jpg'
 
@@ -49,6 +50,17 @@ const allProjects = [
         category: 'Frontend',
         description: 'Suryakshana: CLI Railway Management — A Python terminal appslication featuring role-based access for efficient train schedule tracking, route monitoring, and administrative data entry.',
         image: suryakshana,
+        span: 'md:col-span-2',
+        radius: '24px 60px 60px 24px',
+    },
+
+    {
+        id: 5,
+        title: 'Hen Multimedia',
+        tag: 'Native HTML5 + CSS3 + Vanilla JavaScript',
+        category: 'Frontend',
+        description: 'Camera Rental Catalog — a simple, responsive web catalog for browsing available photography and videography equipment.',
+        image: henmultimedia,
         span: 'md:col-span-2',
         radius: '24px 60px 60px 24px',
     },
