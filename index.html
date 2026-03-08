@@ -1,23 +1,88 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/hero-portrait.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <script>
+      !(function () {
+        var t = localStorage.getItem("theme") || "auto";
+        if (
+          t === "dark" ||
+          (t === "auto" &&
+            window.matchMedia("(prefers-color-scheme:dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", "#0f172a");
+        } else {
+          document.documentElement.classList.remove("dark");
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", "#ffffff");
+        }
+      })();
+    </script>
+    
+    <meta
+      name="description"
+      content="WeaveFlow Studio engineers robust digital solutions. We merge high-performance architecture with flawless design to build scalable web applications." 
+    />
+    
+    <meta
+      name="keywords"
+      content="WeaveFlow Studio, Web Development Agency, Digital Agency, Software Engineering, Scalable Web Applications, React, Next.js, Architecture"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/hero-portrait.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="WeaveFlow portfolio — Architecting the future through clean code and modern web experiences." />
-  <title>WeaveFlow</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-</head>
+    <meta
+      property="og:title"
+      content="WeaveFlow Studio | Engineering Robust Digital Solutions"
+    />
+    <meta
+      property="og:description"
+      content="WeaveFlow Studio engineers robust digital solutions. We merge high-performance architecture with flawless design to build scalable web applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weaveflow.studio/" />
+    <meta
+      property="og:image"
+      content="https://weaveflow.studio/hero-portrait.png"
+    />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <title>WeaveFlow Studio | Engineering Robust Digital Solutions</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "ProfessionalService"],
+        "name": "WeaveFlow Studio",
+        "url": "https://weaveflow.studio",
+        "logo": "https://weaveflow.studio/hero-portrait.png",
+        "description": "WeaveFlow Studio engineers robust digital solutions. We merge high-performance architecture with flawless design to build scalable web applications.",
+        "knowsAbout": [
+          "Web Development",
+          "Software Engineering",
+          "Scalable Systems",
+          "React",
+          "Next.js",
+          "Backend Architecture"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

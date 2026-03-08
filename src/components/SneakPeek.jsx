@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import project1 from '../assets/images/project-1.png'
 import project2 from '../assets/images/project-2.png'
 import project3 from '../assets/images/project-3.png'
@@ -35,8 +34,6 @@ const fadeUp = {
 
 /* ── Component ───────────────────────────────────── */
 export default function SneakPeek() {
-    const [hoveredId, setHoveredId] = useState(null)
-
     return (
         <section id="projects" className="relative bg-slate py-24 lg:py-32 overflow-hidden">
             {/* Decorative blurs */}
@@ -70,38 +67,35 @@ export default function SneakPeek() {
                 </motion.div>
 
                 {/* Bento-Box Grid — 4 projects */}
-                <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-5" layout>
-                    <AnimatePresence>
-                        {featured.map((project, idx) => (
-                            <motion.div
-                                key={project.id}
-                                layout
-                                className={`group relative bg-white/[0.04] backdrop-blur-sm border border-white/10 overflow-hidden cursor-pointer ${project.span}`}
-                                style={{ borderRadius: project.radius }}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                                animate={{
-                                    opacity: hoveredId && hoveredId !== project.id ? 0.35 : 1,
-                                }}
-                                whileHover={{
-                                    scale: 1.02,
-                                    y: -4,
-                                    transition: { type: 'spring', stiffness: 300, damping: 20 },
-                                }}
-                                onHoverStart={() => setHoveredId(project.id)}
-                                onHoverEnd={() => setHoveredId(null)}
-                            >
-                                {/* Image */}
+                <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-5 group/grid">
+                    {featured.map((project, idx) => (
+                        <motion.div
+                            key={project.id}
+                            className={`group/card relative bg-white/[0.04] backdrop-blur-sm border border-white/10 overflow-hidden cursor-pointer will-change-transform ${project.span}`}
+                            style={{ borderRadius: project.radius }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            whileHover={{
+                                scale: 1.02,
+                                y: -6,
+                                transition: { type: 'spring', stiffness: 400, damping: 25 },
+                            }}
+                        >
+                            {/* Image */}
                                 <div className="relative overflow-hidden">
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${project.span ? 'h-56 md:h-72' : 'h-52 md:h-60'
+                                        className={`w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-105 will-change-transform ${project.span ? 'h-56 md:h-72' : 'h-52 md:h-60'
                                             }`}
+                                        loading="lazy"
+                                        decoding="async"
+                                        width={800}
+                                        height={600}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate/80 via-slate/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate/80 via-slate/20 to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity duration-500" />
 
                                     {/* Tag pill */}
                                     <div className="absolute bottom-4 left-4">
@@ -111,7 +105,7 @@ export default function SneakPeek() {
                                     </div>
 
                                     {/* Arrow — appears on hover */}
-                                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-500">
                                         <svg className="w-4 h-4 text-white -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                         </svg>
@@ -121,14 +115,13 @@ export default function SneakPeek() {
                                 {/* Content */}
                                 <div className="p-5 relative">
                                     <div className="absolute top-0 right-5 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-accent shadow-md shadow-accent/30" />
-                                    <h3 className="font-heading font-bold text-lg text-white group-hover:text-accent transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-xs text-white/40 leading-relaxed mt-1.5">{project.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
+                                    <h3 className="font-heading font-bold text-lg text-white group-hover/card:text-accent transition-colors duration-300">
+                                    {project.title}
+                                </h3>
+                                <p className="text-xs text-white/40 leading-relaxed mt-1.5">{project.description}</p>
+                            </div>
+                        </motion.div>
+                    ))}
                 </motion.div>
 
                 {/* CTA */}

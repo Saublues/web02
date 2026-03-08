@@ -103,7 +103,15 @@ export default function About() {
                             className="overflow-hidden shadow-2xl shadow-slate/10"
                             style={{ borderRadius: '24px 120px 24px 60px' }}
                         >
-                            <img src={aboutImg} alt="About" className="w-full h-[420px] lg:h-[520px] object-cover" />
+                            <img 
+                                src={aboutImg} 
+                                alt="WeaveFlow Studio technical team working on scalable backend solutions" 
+                                className="w-full h-[420px] lg:h-[520px] object-cover" 
+                                loading="lazy"
+                                decoding="async"
+                                width={800}
+                                height={1000}
+                            />
                         </div>
 
                         {/* Stat card — overlapping bottom-left */}

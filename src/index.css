@@ -25,6 +25,21 @@ body {
   color: #1E293B;
   background-color: #FFFFFF;
   overflow-x: hidden;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+html.dark body {
+  color: #CBD5E1;
+  background-color: #020617;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply dark:text-white;
+  }
+  a {
+    @apply dark:text-orange-400;
+  }
 }
 
 /* ── Blueprint / grid-line background ───────────── */
@@ -42,17 +57,31 @@ body {
       transparent 80px);
 }
 
+html.dark .blueprint-bg {
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(30, 41, 59, 0.3) 0px,
+      rgba(30, 41, 59, 0.3) 1px,
+      transparent 1px,
+      transparent 80px),
+    repeating-linear-gradient(0deg,
+      rgba(30, 41, 59, 0.2) 0px,
+      rgba(30, 41, 59, 0.2) 1px,
+      transparent 1px,
+      transparent 80px);
+}
+
 /* ── Stroke / Outline text utility ──────────────── */
 .text-stroke {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #CBD5E1;
   color: transparent;
+  transition: -webkit-text-stroke 150ms ease;
 }
 
-.text-stroke-dark {
-  -webkit-text-fill-color: transparent;
+/* Otomatis berubah pas dark mode aktif */
+html.dark .text-stroke {
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
-  color: transparent;
 }
 
 /* ── Watermark large text ───────────────────────── */
@@ -60,6 +89,11 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1.5px rgba(203, 213, 225, 0.5);
   color: transparent;
+  transition: -webkit-text-stroke 150ms ease;
+}
+
+html.dark .watermark-text {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.1);
 }
 
 /* ── Smooth transitions ─────────────────────────── */
@@ -77,9 +111,19 @@ button {
   background: #F3F4F6;
 }
 
+/* Scrollbar track ikut gelap pas dark mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #020617; 
+}
+
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 3px;
+}
+
+/* Scrollbar thumb jadi elegan pas dark mode */
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155; 
 }
 
 /* ── Entrance animations ────────────────────────── */
