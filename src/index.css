@@ -25,6 +25,21 @@ body {
   color: #1E293B;
   background-color: #FFFFFF;
   overflow-x: hidden;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+html.dark body {
+  color: #CBD5E1;
+  background-color: #020617;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply dark:text-white;
+  }
+  a {
+    @apply dark:text-orange-400;
+  }
 }
 
 /* ── Blueprint / grid-line background ───────────── */
@@ -38,6 +53,20 @@ body {
     repeating-linear-gradient(0deg,
       rgba(203, 213, 225, 0.13) 0px,
       rgba(203, 213, 225, 0.13) 1px,
+      transparent 1px,
+      transparent 80px);
+}
+
+html.dark .blueprint-bg {
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(30, 41, 59, 0.3) 0px,
+      rgba(30, 41, 59, 0.3) 1px,
+      transparent 1px,
+      transparent 80px),
+    repeating-linear-gradient(0deg,
+      rgba(30, 41, 59, 0.2) 0px,
+      rgba(30, 41, 59, 0.2) 1px,
       transparent 1px,
       transparent 80px);
 }

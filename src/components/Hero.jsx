@@ -134,8 +134,11 @@ export default function Hero() {
                             >
                                 <img
                                     src={heroImg}
-                                    alt="Digital studio at work"
+                                    alt="WeaveFlow Studio technical team working on modern web architecture"
                                     className="w-full h-[420px] lg:h-[540px] object-cover"
+                                    fetchPriority="high"
+                                    width={800}
+                                    height={1000}
                                 />
                             </div>
 
