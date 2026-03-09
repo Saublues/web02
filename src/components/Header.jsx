@@ -90,18 +90,19 @@ export default function Header() {
 
   return (
     <>
+      {/* 1. THE MAIN NAVBAR CONTAINER (Glassmorphism & Scroll State) */}
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800/50 transition-colors duration-150"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200"
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
+            {/* 2. LOGO & TYPOGRAPHY CONTRAST */}
             <Link
               to="/"
-              className="font-heading font-bold text-lg tracking-tight text-slate dark:text-slate-100"
+              className="font-heading font-bold text-lg tracking-tight text-slate-950 dark:text-white"
             >
               WeaveFlow<span className="text-accent">.</span>
             </Link>
@@ -114,7 +115,7 @@ export default function Header() {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-sm font-medium text-slate/70 dark:text-gray-300 hover:text-accent dark:hover:text-white transition-colors relative group"
+                    className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-accent dark:hover:text-white transition-colors relative group"
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
@@ -123,7 +124,7 @@ export default function Header() {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="text-sm font-medium text-slate/70 dark:text-gray-300 hover:text-accent dark:hover:text-white transition-colors relative group"
+                    className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-accent dark:hover:text-white transition-colors relative group"
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
@@ -132,65 +133,68 @@ export default function Header() {
               )}
             </nav>
 
-            {/* Desktop CTA */}
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
-              className="hidden md:inline-flex items-center gap-2 bg-accent hover:bg-orange-600 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
-            >
-              Let&apos;s Talk
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+            {/* 5. THEME TOGGLE & CTA PLACEMENT (Mobile-First) */}
+            <div className="flex items-center gap-2 md:gap-4">
+              {/* Theme Toggle */}
+              <ThemeToggle />
+
+              {/* Desktop CTA */}
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="hidden md:inline-flex items-center gap-2 bg-accent text-white hover:bg-orange-600 dark:bg-accent dark:text-white dark:hover:bg-orange-500 text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                Let&apos;s Talk
+                <svg
+                  className="w-4 h-4 text-white dark:text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+
+              {/* 4. ICONS: HAMBURGER, CLOSE (X) */}
+              <button
+                className="md:hidden relative w-10 h-10 flex items-center justify-center text-slate-900 dark:hover:bg-slate-800 p-2 rounded-full transition-colors"
+                onClick={() => setIsOpen((prev) => !prev)}
+                aria-label="Toggle menu"
+              >
+                <motion.span
+                  className="absolute block w-5 h-[2px] bg-black dark:bg-accent rounded-full"
+                  variants={topLine}
+                  animate={isOpen ? "open" : "closed"}
+                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 />
-              </svg>
-            </a>
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
-            {/* ── Animated Hamburger ─────────────────── */}
-            <button
-              className="md:hidden relative w-10 h-10 flex items-center justify-center"
-              onClick={() => setIsOpen((prev) => !prev)}
-              aria-label="Toggle menu"
-            >
-              <motion.span
-                className="absolute block w-6 h-[2px] bg-slate dark:bg-slate-100 rounded-full"
-                variants={topLine}
-                animate={isOpen ? "open" : "closed"}
-                transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              />
-              <motion.span
-                className="absolute block w-4 h-[2px] bg-slate dark:bg-slate-100 rounded-full"
-                variants={midLine}
-                animate={isOpen ? "open" : "closed"}
-                transition={{ duration: 0.2 }}
-              />
-              <motion.span
-                className="absolute block w-6 h-[2px] bg-slate dark:bg-slate-100 rounded-full"
-                variants={botLine}
-                animate={isOpen ? "open" : "closed"}
-                transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              />
-            </button>
+                <motion.span
+                  className="absolute block w-5 h-[2px] bg-black dark:bg-accent rounded-full"
+                  variants={midLine}
+                  animate={isOpen ? "open" : "closed"}
+                  transition={{ duration: 0.2 }}
+                />
+                <motion.span
+                  className="absolute block w-5 h-[2px] bg-black dark:bg-accent rounded-full"
+                  variants={botLine}
+                  animate={isOpen ? "open" : "closed"}
+                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                />
+              </button>
+            </div>
           </div>
         </div>
       </motion.header>
 
-      {/* ── Mobile Overlay ──────────────────────────── */}
+      {/* 3. THE MOBILE MENU OVERLAY */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-slate/95 backdrop-blur-xl flex flex-col items-center justify-center md:hidden"
+            className="fixed inset-0 z-40 bg-white dark:bg-slate-950 flex flex-col items-center justify-center md:hidden"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
@@ -203,7 +207,7 @@ export default function Header() {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="font-heading font-bold text-4xl text-white/90 hover:text-accent dark:hover:text-white transition-colors"
+                    className="text-2xl font-semibold font-heading text-slate-900 dark:text-white hover:text-accent transition-colors"
                     variants={linkVariants}
                   >
                     {link.label}
@@ -213,7 +217,7 @@ export default function Header() {
                     <Link
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="font-heading font-bold text-4xl text-white/90 hover:text-accent dark:hover:text-white transition-colors"
+                      className="text-2xl font-semibold font-heading text-slate-900 dark:text-white hover:text-accent transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -226,13 +230,13 @@ export default function Header() {
             <motion.a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="mt-10 inline-flex items-center gap-3 bg-accent text-white font-semibold text-lg px-10 py-4 rounded-full shadow-xl shadow-accent/25"
+              className="mt-10 inline-flex items-center gap-3 bg-accent text-white hover:bg-orange-600 dark:bg-accent dark:text-white dark:hover:bg-orange-500 font-semibold text-lg px-10 py-4 rounded-full transition-colors shadow-xl shadow-accent/25"
               variants={linkVariants}
               whileTap={{ scale: 0.95 }}
             >
-              Let&apos;s Talk
+              <span>Let&apos;s Talk</span>
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 flex-shrink-0 text-white dark:text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -247,7 +251,7 @@ export default function Header() {
             </motion.a>
 
             {/* Brand watermark */}
-            <p className="absolute bottom-8 text-[10px] tracking-[0.3em] uppercase text-white/20 font-semibold">
+            <p className="absolute bottom-8 text-[10px] tracking-[0.3em] uppercase text-slate-500 dark:text-slate-400 font-semibold pointer-events-none w-full text-center">
               WeaveFlow Studio
             </p>
           </motion.div>

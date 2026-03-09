@@ -8,6 +8,7 @@ import suryakshana from '../assets/images/suryakshana.jpeg'
 import resiklaundry from '../assets/images/resik-laundry.png'
 import henMultimedia from '../assets/images/HenMultimedia.png'
 import dauhanet from '../assets/images/dauhanet.png'
+import vora from '../assets/images/VORA.png'
 
 /* Placeholder imports until real full-page images are provided.
    You would normally import highly vertical PNGs here. */
@@ -65,6 +66,14 @@ const projectsData = {
         techs: ['React.js', 'Tailwind CSS'],
         liveUrl: 'https://dauha-net.vercel.app/',
         mockupImg: dauhanet, // Sesuaikan variabel image-nya
+    },
+    '7': {
+        title: 'VORA',
+        subtitle: 'Modern Furniture E-Commerce',
+        description: 'Modern Furniture E-Commerce — A minimalist digital storefront featuring seamless checkout, robust inventory management, and immersive product showcases.',
+        techs: ['Laravel', 'React', 'Tailwind CSS', 'Supabase'],
+        liveUrl: '/',
+        mockupImg: vora, // Sesuaikan variabel image-nya
     }
 }
 
@@ -96,7 +105,7 @@ export default function ProjectDetail() {
 
     if (!project) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-white text-slate font-heading">
+            <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-heading">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
                     <Link to="/projects" className="text-accent hover:underline">Return to Projects</Link>
@@ -111,7 +120,7 @@ export default function ProjectDetail() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white min-h-screen"
+            className="bg-white dark:bg-slate-900 min-h-screen"
         >
             <Header />
 
@@ -120,7 +129,7 @@ export default function ProjectDetail() {
                     
                     {/* Back link */}
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-                        <Link to="/projects" className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-slate/40 hover:text-accent transition-colors mb-12">
+                        <Link to="/projects" className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-amber-500 transition-colors mb-12">
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
@@ -138,26 +147,26 @@ export default function ProjectDetail() {
                             initial="hidden"
                             animate="visible"
                         >
-                            <motion.h1 variants={itemVariants} className="font-heading font-bold text-5xl md:text-6xl text-slate leading-[1.1] tracking-tight">
+                            <motion.h1 variants={itemVariants} className="font-heading font-bold text-5xl md:text-6xl text-slate-900 dark:text-white leading-[1.1] tracking-tight">
                                 {project.title}
                             </motion.h1>
                             
-                            <motion.p variants={itemVariants} className="mt-4 text-xl text-slate border-l-2 border-accent pl-4 font-medium leading-relaxed">
+                            <motion.p variants={itemVariants} className="mt-4 text-xl text-slate-600 dark:text-slate-300 border-l-2 border-accent pl-4 font-medium leading-relaxed">
                                 {project.subtitle}
                             </motion.p>
 
-                            <motion.p variants={itemVariants} className="mt-8 text-base text-slate/60 leading-relaxed font-body">
+                            <motion.p variants={itemVariants} className="mt-8 text-base text-slate-600 dark:text-slate-300 leading-relaxed font-body">
                                 {project.description}
                             </motion.p>
 
                             {/* Tech Stack (1px bordered) */}
                             <motion.div variants={itemVariants} className="mt-12">
-                                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-slate/30 mb-4">
+                                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-4">
                                     Technology Stack
                                 </p>
                                 <div className="flex flex-wrap gap-2">
                                     {project.techs.map(tech => (
-                                        <span key={tech} className="px-4 py-2 border border-slate/10 rounded-full text-xs font-semibold text-slate/70 bg-slate/[0.02]">
+                                        <span key={tech} className="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800">
                                             {tech}
                                         </span>
                                     ))}
@@ -191,11 +200,11 @@ export default function ProjectDetail() {
                             
                             {/* Optional: Add extra mobile mockups or descriptive grids below the macbook here */}
                             <div className="mt-16 grid grid-cols-2 gap-4">
-                                <div className="bg-slate/[0.02] border border-slate/10 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
-                                    <span className="text-xs text-slate/30 tracking-widest uppercase font-semibold">Mobile View (TBD)</span>
+                                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
+                                    <span className="text-xs text-slate-400 dark:text-slate-500 tracking-widest uppercase font-semibold">Mobile View (TBD)</span>
                                 </div>
-                                <div className="bg-slate/[0.02] border border-slate/10 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
-                                    <span className="text-xs text-slate/30 tracking-widest uppercase font-semibold">Feature Detail (TBD)</span>
+                                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
+                                    <span className="text-xs text-slate-400 dark:text-slate-500 tracking-widest uppercase font-semibold">Feature Detail (TBD)</span>
                                 </div>
                             </div>
                         </motion.div>

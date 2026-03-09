@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import project1 from '../assets/images/project-1.png'
 import project2 from '../assets/images/project-2.png'
@@ -7,11 +7,11 @@ import heroImg from '../assets/images/hero-portrait.png'
 
 /* ── Project Data ────────────────────────────────── */
 const featured = [
-    {
-        id: 1,
-        title: 'Saintara',
-        tag: 'React · Tailwind',
-        description: 'Character Testing Platform — personality assessment app with rich data visualization and modern UI.',
+   {
+        id: 7,
+        title: 'Vora',
+        tag: 'Laravel · React · Tailwind · Supabase',
+        description: 'Premium Furniture E-Commerce — A minimalist digital storefront featuring seamless checkout, robust inventory management, and immersive product showcases.',
         image: project1,
         span: 'md:col-span-2',
         radius: '24px 80px 24px 24px',
@@ -34,8 +34,10 @@ const fadeUp = {
 
 /* ── Component ───────────────────────────────────── */
 export default function SneakPeek() {
+    const navigate = useNavigate();
+
     return (
-        <section id="projects" className="relative bg-slate py-24 lg:py-32 overflow-hidden">
+        <section id="projects" className="relative bg-slate-900 dark:bg-slate-100 py-24 lg:py-32 overflow-hidden">
             {/* Decorative blurs */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
@@ -55,13 +57,13 @@ export default function SneakPeek() {
                             <span className="w-8 h-px bg-accent" />
                             Selected Works
                         </motion.span>
-                        <motion.h2 variants={fadeUp} className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+                        <motion.h2 variants={fadeUp} className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white dark:text-slate-900 leading-tight">
                             Case
                             <br />
-                            <span className="text-stroke-dark">Studies</span>
+                            <span className="text-stroke-dark dark:text-stroke">Studies</span>
                         </motion.h2>
                     </div>
-                    <motion.p variants={fadeUp} className="max-w-sm text-sm text-white/40 leading-relaxed">
+                    <motion.p variants={fadeUp} className="max-w-sm text-sm text-white/40 dark:text-slate-500 leading-relaxed">
                         A curated selection of projects we&apos;ve shipped — from full-stack platforms to serverless micro-apps.
                     </motion.p>
                 </motion.div>
@@ -71,7 +73,7 @@ export default function SneakPeek() {
                     {featured.map((project, idx) => (
                         <motion.div
                             key={project.id}
-                            className={`group/card relative bg-white/[0.04] backdrop-blur-sm border border-white/10 overflow-hidden cursor-pointer will-change-transform ${project.span}`}
+                            className={`group/card relative bg-white/[0.04] dark:bg-white/10 backdrop-blur-sm border border-white/10 dark:border-slate-300 overflow-hidden cursor-pointer will-change-transform ${project.span}`}
                             style={{ borderRadius: project.radius }}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -82,6 +84,7 @@ export default function SneakPeek() {
                                 y: -6,
                                 transition: { type: 'spring', stiffness: 400, damping: 25 },
                             }}
+                            onClick={() => navigate('/projects/' + project.id)}
                         >
                             {/* Image */}
                                 <div className="relative overflow-hidden">
@@ -112,13 +115,12 @@ export default function SneakPeek() {
                                     </div>
                                 </div>
 
-                                {/* Content */}
                                 <div className="p-5 relative">
                                     <div className="absolute top-0 right-5 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-accent shadow-md shadow-accent/30" />
-                                    <h3 className="font-heading font-bold text-lg text-white group-hover/card:text-accent transition-colors duration-300">
+                                    <h3 className="font-heading font-bold text-lg text-slate-900 dark:text-slate-900 group-hover/card:text-accent transition-colors duration-300">
                                     {project.title}
                                 </h3>
-                                <p className="text-xs text-white/40 leading-relaxed mt-1.5">{project.description}</p>
+                                <p className="text-xs text-slate-500 leading-relaxed mt-1.5">{project.description}</p>
                             </div>
                         </motion.div>
                     ))}

@@ -15,18 +15,23 @@ const ThemeToggle = memo(function ThemeToggle() {
     setIsDark(newDarkState);
 
     // DOM-first approach: update class immediately
+    // DOM-first approach: update class immediately
     if (newDarkState) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
+
+      // Kasih tanda tanya (?) sebelum .setAttribute
       document
         .querySelector('meta[name="theme-color"]')
-        .setAttribute("content", "#0f172a");
+        ?.setAttribute("content", "#0f172a");
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
+
+      // Kasih tanda tanya (?) sebelum .setAttribute
       document
         .querySelector('meta[name="theme-color"]')
-        .setAttribute("content", "#ffffff");
+        ?.setAttribute("content", "#ffffff");
     }
   };
 

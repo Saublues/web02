@@ -43,7 +43,7 @@ export default function About() {
                     >
                         <motion.h2
                             variants={fadeUp}
-                            className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.5rem] text-slate leading-[1.1] tracking-tight"
+                            className="font-heading font-bold text-4xl md:text-5xl lg:text-[3.5rem] text-slate-900 dark:text-white leading-[1.1] tracking-tight"
                         >
                             The architecture
                             <br />
@@ -52,7 +52,7 @@ export default function About() {
                             seamless flow.
                         </motion.h2>
 
-                        <motion.p variants={fadeUp} className="mt-8 text-slate/50 text-base leading-relaxed max-w-lg">
+                        <motion.p variants={fadeUp} className="mt-8 text-slate-600 dark:text-slate-300 text-base leading-relaxed max-w-lg">
                             At WeaveFlow, we don&apos;t just write code; we engineer solutions. Our philosophy is built
                             on weaving complex backend logic with lightweight, responsive frontends.
                         </motion.p>
@@ -75,17 +75,17 @@ export default function About() {
                                 ))}
                             </div>
                             <div className="ml-4">
-                                <p className="text-sm font-semibold text-slate">30+ Clients</p>
-                                <p className="text-xs text-slate/40">Trusted globally</p>
+                                <p className="text-sm font-semibold text-slate-900 dark:text-white">30+ Clients</p>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">Trusted globally</p>
                             </div>
                         </motion.div>
 
                         {/* Core Stack — clean inline list */}
-                        <motion.div variants={fadeUp} className="mt-8 border-t border-slate/10 pt-6">
-                            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-slate/30 mb-3">
+                        <motion.div variants={fadeUp} className="mt-8 border-t border-slate-800/10 pt-6">
+                            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-3">
                                 Core Stack
                             </p>
-                            <p className="text-sm text-slate/60 font-medium leading-relaxed">
+                            <p className="text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                                 React &middot; Node.js &middot; Laravel &middot; TypeScript &middot; PostgreSQL<span className="text-accent">.</span>
                             </p>
                         </motion.div>
@@ -100,7 +100,7 @@ export default function About() {
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <div
-                            className="overflow-hidden shadow-2xl shadow-slate/10"
+                            className="overflow-hidden shadow-2xl shadow-slate-800/10"
                             style={{ borderRadius: '24px 120px 24px 60px' }}
                         >
                             <img 
@@ -120,17 +120,17 @@ export default function About() {
                             whileHover={{ y: -5 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                         >
-                            <div className="bg-white rounded-2xl shadow-2xl shadow-slate/15 p-6 lg:p-8 max-w-[280px] border border-gray-100">
+                            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-none p-6 lg:p-8 max-w-[280px] border border-gray-100 dark:border-slate-700/50">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
                                         <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                                         </svg>
                                     </div>
-                                    <span className="text-xs font-semibold text-slate/40 uppercase tracking-wider">Our Promise</span>
+                                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Our Promise</span>
                                 </div>
-                                <p className="font-heading font-bold text-2xl text-slate leading-snug">End-to-End<br /><span className="text-accent">Digital Solutions</span></p>
-                                <p className="text-sm text-slate/50 mt-2">Architecture &middot; Design &middot; Deployment</p>
+                                <p className="font-heading font-bold text-2xl text-slate-900 dark:text-white leading-snug">End-to-End<br /><span className="text-accent">Digital Solutions</span></p>
+                                <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">Architecture &middot; Design &middot; Deployment</p>
                             </div>
                         </motion.div>
 
@@ -147,9 +147,9 @@ export default function About() {
                             animate={{ y: [0, -8, 0] }}
                             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                         >
-                            <div className="bg-slate text-white rounded-2xl shadow-xl shadow-slate/20 px-5 py-3 text-center">
+                            <div className="bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 rounded-2xl shadow-xl shadow-slate-300 dark:shadow-none px-5 py-3 text-center">
                                 <p className="font-heading font-bold text-2xl">5+</p>
-                                <p className="text-[10px] text-white/50 uppercase tracking-wider">Years Exp.</p>
+                                <p className="text-[10px] text-white/50 dark:text-slate-500 uppercase tracking-wider">Years Exp.</p>
                             </div>
                         </motion.div>
                     </motion.div>

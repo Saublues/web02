@@ -42,7 +42,7 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
     return (
-        <section id="projects" className="relative bg-slate py-24 lg:py-32 overflow-hidden z-20">
+        <section id="projects" className="relative bg-slate-900 dark:bg-slate-100 py-24 lg:py-32 overflow-hidden z-20">
             {/* Background decorations - STRICTLY pointer-events-none to prevent blocking clicks */}
             <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl z-[-1]" />
             <div className="pointer-events-none absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl z-[-1]" />
@@ -56,13 +56,13 @@ export default function Projects() {
                             <span className="w-8 h-px bg-accent" />
                             Our Projects
                         </span>
-                        <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+                        <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white dark:text-slate-900 leading-tight">
                             Featured
                             <br />
-                            <span className="text-stroke-dark">Works</span>
+                            <span className="text-stroke-dark dark:text-stroke">Works</span>
                         </h2>
                     </div>
-                    <p className="max-w-sm text-sm text-white/40 leading-relaxed">
+                    <p className="max-w-sm text-sm text-white/40 dark:text-slate-500 leading-relaxed">
                         A curated selection of projects that showcase expertise across the
                         full development stack — from architecture to pixel-perfect UI.
                     </p>
@@ -75,7 +75,7 @@ export default function Projects() {
                             layoutId={`project-card-${project.title}`}
                             key={project.title}
                             onClick={() => setSelectedProject(project)}
-                            className={`group cursor-pointer relative bg-white/[0.04] backdrop-blur-sm border border-white/10 overflow-hidden transition-transform duration-500 hover:-translate-y-2 will-change-transform ${project.large ? 'lg:col-span-2 lg:row-span-1' : ''}`}
+                            className={`group cursor-pointer relative bg-white/[0.04] dark:bg-white/10 backdrop-blur-sm border border-white/10 dark:border-slate-300 overflow-hidden transition-transform duration-500 hover:-translate-y-2 will-change-transform ${project.large ? 'lg:col-span-2 lg:row-span-1' : ''}`}
                             style={{ borderRadius: project.radius }}
                         >
                             {/* Image container */}
@@ -103,10 +103,10 @@ export default function Projects() {
 
                             {/* Content */}
                             <div className="p-6 relative pointer-events-none">
-                                <motion.h3 layoutId={`project-title-${project.title}`} className="font-heading font-bold text-xl text-white group-hover:text-accent transition-colors duration-300">
+                                <motion.h3 layoutId={`project-title-${project.title}`} className="font-heading font-bold text-xl text-white dark:text-slate-900 group-hover:text-accent dark:group-hover:text-accent transition-colors duration-300">
                                     {project.title}
                                 </motion.h3>
-                                <p className="text-sm text-white/40 leading-relaxed mt-2">
+                                <p className="text-sm text-white/40 dark:text-slate-500 leading-relaxed mt-2">
                                     {project.description}
                                 </p>
 
@@ -114,12 +114,12 @@ export default function Projects() {
                                 <div className="mt-6 flex flex-wrap items-center gap-3">
                                     <div className="flex gap-2">
                                         {project.techs.map((t) => (
-                                            <div key={t} className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-bold text-white/60">
+                                            <div key={t} className="w-8 h-8 rounded-full bg-white/5 border border-white/10 dark:border-slate-300 dark:text-slate-600 flex items-center justify-center text-[10px] font-bold text-white/60">
                                                 {t}
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="text-[11px] font-semibold uppercase tracking-wider text-white/30 ml-auto group-hover:text-accent transition-colors flex items-center gap-1">
+                                    <div className="text-[11px] font-semibold uppercase tracking-wider text-white/30 dark:text-slate-400 ml-auto group-hover:text-accent dark:group-hover:text-accent transition-colors flex items-center gap-1">
                                         Discover 
                                         <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -135,7 +135,7 @@ export default function Projects() {
                 <div className="mt-14 text-center relative z-20">
                     <Link
                         to="/projects"
-                        className="group inline-flex items-center gap-3 bg-white/[0.06] hover:bg-accent text-white text-sm font-semibold px-8 py-4 rounded-full border border-white/10 hover:border-accent transition-all duration-400 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-0.5"
+                        className="group inline-flex items-center gap-3 bg-white/[0.06] dark:bg-slate-200 hover:bg-accent text-white dark:text-slate-900 text-sm font-semibold px-8 py-4 rounded-full border border-white/10 dark:border-slate-300 hover:border-accent dark:hover:border-accent transition-all duration-400 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-0.5"
                     >
                         View All Projects
                         <svg
@@ -166,13 +166,13 @@ export default function Projects() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedProject(null)}
-                            className="absolute inset-0 bg-slate/95 backdrop-blur-md cursor-pointer pointer-events-auto"
+                            className="absolute inset-0 bg-slate-800/95 backdrop-blur-md cursor-pointer pointer-events-auto"
                         />
                         
                         {/* Modal Container */}
                         <motion.div 
                             layoutId={`project-card-${selectedProject?.title}`}
-                            className="relative w-full max-w-6xl h-[90vh] md:h-auto md:max-h-[85vh] bg-slate rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row z-10 pointer-events-auto"
+                            className="relative w-full max-w-6xl h-[90vh] md:h-auto md:max-h-[85vh] bg-slate-900 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-white/10 dark:border-slate-700/50 flex flex-col md:flex-row z-10 pointer-events-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close (X) button */}

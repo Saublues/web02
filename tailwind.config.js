@@ -13,7 +13,6 @@ export default {
       },
       colors: {
         offwhite: '#F3F4F6',
-        slate: '#1E293B',
         accent: '#F97316',
       },
       borderRadius: {

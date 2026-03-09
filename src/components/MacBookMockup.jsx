@@ -43,7 +43,7 @@ export default function MacBookMockup({ imageSrc, alt = "Project preview", child
     return (
         <div className="relative w-full max-w-5xl mx-auto drop-shadow-2xl">
             {/* ── MacBook Frame (CSS/SVG Hybrid) ── */}
-            <div className="relative pt-[62.5%] w-full rounded-t-[20px] lg:rounded-t-[32px] bg-slate/90 shadow-inner overflow-hidden border-2 border-slate/80 ring-1 ring-white/10">
+            <div className="relative pt-[62.5%] w-full rounded-t-[20px] lg:rounded-t-[32px] bg-slate-800/90 shadow-inner overflow-hidden border-2 border-slate-800/80 ring-1 ring-white/10">
                 
                 {/* Screen Mask Area (16:10 approximate) */}
                 <div 
@@ -82,7 +82,7 @@ export default function MacBookMockup({ imageSrc, alt = "Project preview", child
                 </div>
 
                 {/* Webcam dot */}
-                <div className="absolute top-[1.5%] left-1/2 -translate-x-1/2 w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-slate/50 border border-black/20" />
+                <div className="absolute top-[1.5%] left-1/2 -translate-x-1/2 w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-slate-800/50 border border-black/20" />
             </div>
 
             {/* ── MacBook Bottom Lip (Keyboard base front) ── */}

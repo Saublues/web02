@@ -138,7 +138,7 @@ export default function ProjectsPage() {
               </motion.span>
 
               <motion.h1
-                className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate tracking-tighter leading-[0.9]"
+                className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate-900 dark:text-white tracking-tighter leading-[0.9]"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -163,7 +163,7 @@ export default function ProjectsPage() {
               </motion.h1>
 
               <motion.p
-                className="mt-8 max-w-lg text-base text-slate/50 leading-relaxed"
+                className="mt-8 max-w-lg text-base text-slate-600 dark:text-slate-300 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
@@ -189,15 +189,12 @@ export default function ProjectsPage() {
               <button
                 key={f}
                 onClick={() => setActiveFilter(f)}
-                className="relative px-6 py-2.5 text-sm font-medium rounded-full transition-colors duration-300 cursor-pointer"
-                style={{
-                  color: activeFilter === f ? "#fff" : "rgba(30,41,59,0.5)",
-                }}
+                className={`relative px-6 py-2.5 text-sm font-medium rounded-full transition-colors duration-300 cursor-pointer ${activeFilter === f ? 'text-white dark:text-slate-900' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'}`}
               >
                 {activeFilter === f && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-slate rounded-full shadow-lg shadow-slate/15"
+                    className="absolute inset-0 bg-slate-900 dark:bg-white rounded-full shadow-lg shadow-slate-200/15"
                     transition={{ type: "spring", stiffness: 500, damping: 35 }}
                   />
                 )}
@@ -245,7 +242,7 @@ export default function ProjectsPage() {
                     className="h-full"
                   >
                     <div
-                      className="group relative bg-white border border-gray-100 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer h-full"
+                      className="group relative bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700/50 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 cursor-pointer h-full"
                       style={{ borderRadius: project.radius }}
                       onMouseEnter={() => setHoveredId(project.id)}
                       onMouseLeave={() => setHoveredId(null)}
@@ -295,7 +292,7 @@ export default function ProjectsPage() {
                               }}
                             >
                               <motion.span
-                                className="inline-flex items-center gap-2 bg-white text-slate text-sm font-semibold px-6 py-3 rounded-full shadow-xl cursor-pointer"
+                                className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-semibold px-6 py-3 rounded-full shadow-xl cursor-pointer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.97 }}
                               >
@@ -323,14 +320,14 @@ export default function ProjectsPage() {
                       <div className="p-6 relative">
                         <div className="absolute top-0 right-6 -translate-y-1/2 w-3 h-3 rounded-full bg-accent shadow-md shadow-accent/30" />
                         <div className="flex items-center justify-between gap-4 mb-2">
-                          <h3 className="font-heading font-bold text-lg text-slate group-hover:text-accent transition-colors duration-300">
+                          <h3 className="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-accent dark:group-hover:text-amber-500 transition-colors duration-300">
                             {project.title}
                           </h3>
-                          <span className="shrink-0 text-[10px] font-semibold text-slate/40 bg-offwhite px-3 py-1 rounded-full">
+                          <span className="shrink-0 text-[10px] font-semibold text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700 px-3 py-1 rounded-full">
                             {project.category}
                           </span>
                         </div>
-                        <p className="text-sm text-slate/50 leading-relaxed">
+                        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                           {project.description}
                         </p>
                       </div>
@@ -350,7 +347,7 @@ export default function ProjectsPage() {
           >
             <Link to="/">
               <motion.span
-                className="inline-flex items-center gap-3 text-slate/50 hover:text-accent text-sm font-medium cursor-pointer transition-colors"
+                className="inline-flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-amber-500 text-sm font-medium cursor-pointer transition-colors"
                 whileHover={{ x: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >

@@ -121,7 +121,7 @@ function ContactCard({ channel }) {
             target="_blank"
             rel="noopener noreferrer"
             variants={cardVariants}
-            className="group relative flex flex-col justify-between rounded-[32px] border border-gray-200/80 bg-white p-8 lg:p-10 min-h-[280px] overflow-hidden cursor-pointer"
+            className="group relative flex flex-col justify-between rounded-[32px] border border-gray-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800 p-8 lg:p-10 min-h-[280px] overflow-hidden cursor-pointer"
             whileHover={{
                 scale: 1.02,
                 y: -8,
@@ -154,10 +154,10 @@ function ContactCard({ channel }) {
 
             {/* Bottom: Text content */}
             <div className="relative z-10 mt-auto pt-8">
-                <h3 className="font-heading font-bold text-xl lg:text-2xl text-slate mb-1 group-hover:text-slate transition-colors">
+                <h3 className="font-heading font-bold text-xl lg:text-2xl text-slate-900 dark:text-accent mb-1 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                     {channel.name}
                 </h3>
-                <p className="text-sm text-slate/40 group-hover:text-slate/50 transition-colors">
+                <p className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                     {channel.subtitle}
                 </p>
             </div>
@@ -201,15 +201,15 @@ export default function Contact() {
                     </span>
 
                     <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
-                        <span className="text-slate">Let&apos;s build </span>
+                        <span className="text-slate-900 dark:text-white">Let&apos;s build </span>
                         <span className="bg-gradient-to-r from-accent via-orange-400 to-amber-500 bg-clip-text text-transparent">
                             something
                         </span>
                         <br />
-                        <span className="text-slate">scalable.</span>
+                        <span className="text-slate-900 dark:text-white">scalable.</span>
                     </h2>
 
-                    <p className="mt-6 max-w-md mx-auto text-base text-slate/50 leading-relaxed">
+                    <p className="mt-6 max-w-md mx-auto text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                         Have a project in mind? Pick your preferred channel and let&apos;s connect.
                     </p>
                 </motion.div>
@@ -235,7 +235,7 @@ export default function Contact() {
                             href={s.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-slate/40 hover:text-accent hover:border-accent/30 hover:bg-accent/5 transition-colors"
+                            className="w-12 h-12 rounded-full border border-gray-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-amber-500 hover:border-accent/30 dark:hover:border-amber-500/30 hover:bg-accent/5 dark:hover:bg-amber-500/5 transition-colors"
                             whileHover={{ scale: 1.15, y: -4 }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: 'spring', stiffness: 400, damping: 15 }}
@@ -254,23 +254,23 @@ export default function Contact() {
                 </motion.div>
 
                 {/* ── Footer ───────────────────────────────── */}
-                <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div>
-                        <p className="font-heading font-bold text-lg text-slate">
+                        <p className="font-heading font-bold text-lg text-slate-900 dark:text-white">
                             WeaveFlow<span className="text-accent">.</span>
                         </p>
-                        <p className="text-xs text-slate/40 mt-1">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                             Building the digital future, one line at a time.
                         </p>
                     </div>
                     <nav className="flex items-center gap-6">
                         {['Home', 'About', 'Projects', 'Contact'].map((l) => (
-                            <a key={l} href={`#${l.toLowerCase()}`} className="text-xs text-slate/40 hover:text-accent transition-colors">
+                            <a key={l} href={`#${l.toLowerCase()}`} className="text-xs text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-amber-500 transition-colors">
                                 {l}
                             </a>
                         ))}
                     </nav>
-                    <p className="text-xs text-slate/30">
+                    <p className="text-xs text-slate-400 dark:text-slate-500">
                         &copy; {new Date().getFullYear()} All rights reserved.
                     </p>
                 </div>
