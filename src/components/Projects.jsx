@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import project1 from '../assets/images/project-1.png';
-import project2 from '../assets/images/project-2.png';
+import recircle from '../assets/images/recircle.jpeg';
 import project3 from '../assets/images/project-3.png';
 
 const projects = [
@@ -20,7 +20,7 @@ const projects = [
         title: 'ReCircle',
         tag: 'Laravel + Inertia',
         description: 'Student marketplace solution — connecting university students to buy and sell pre-loved items.',
-        image: project2,
+        image: recircle,
         large: false,
         radius: '60px 24px 24px 60px',
         link: '/projects/recircle',

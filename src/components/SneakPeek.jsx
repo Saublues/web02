@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import project1 from '../assets/images/project-1.png'
-import project2 from '../assets/images/project-2.png'
+import vora from '../assets/images/vora.jpeg'
+import recircle from '../assets/images/recircle.jpeg'
 import project3 from '../assets/images/project-3.png'
 import heroImg from '../assets/images/hero-portrait.png'
 
@@ -12,7 +13,7 @@ const featured = [
         title: 'Vora',
         tag: 'Laravel · React · Tailwind · Supabase',
         description: 'Premium Furniture E-Commerce — A minimalist digital storefront featuring seamless checkout, robust inventory management, and immersive product showcases.',
-        image: project1,
+        image: vora,
         span: 'md:col-span-2',
         radius: '24px 80px 24px 24px',
     },
@@ -21,7 +22,7 @@ const featured = [
         title: 'ReCircle',
         tag: 'Laravel · Inertia',
         description: 'Student Marketplace Solution — connecting university students to buy and sell pre-loved items sustainably.',
-        image: project2,
+        image: recircle,
         span: '',
         radius: '60px 24px 24px 60px',
     },

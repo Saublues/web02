@@ -6,14 +6,14 @@ import MacBookMockup from './MacBookMockup'
 import Contact from './Contact'
 import suryakshana from '../assets/images/suryakshana.jpeg'
 import resiklaundry from '../assets/images/resik-laundry.png'
+import saintaraScroll from '../assets/images/saintara-scroll.png'
 import henMultimedia from '../assets/images/HenMultimedia.png'
 import dauhanet from '../assets/images/dauhanet.png'
-import vora from '../assets/images/VORA.png'
+import voraScroll from '../assets/images/vora-scroll.png'
+import recircleScroll from '../assets/images/recircle-scroll.jpeg'
 
 /* Placeholder imports until real full-page images are provided.
    You would normally import highly vertical PNGs here. */
-import project1 from '../assets/images/project-1.png'
-import project2 from '../assets/images/project-2.png'
 
 // Ganti nama keys-nya jadi '1', '2', '3', '4' sesuai ID di ProjectsPage
 const projectsData = {
@@ -23,7 +23,7 @@ const projectsData = {
         description: 'Saintara is a full-stack personality assessment application built for scale...',
         techs: ['Laravel Breeze', 'React', 'Inertia.js', 'Tailwind'],
         liveUrl: 'https://github.com/saublues/saintara',
-        mockupImg: project1, 
+        mockupImg: saintaraScroll, 
     },
     '2': {
         title: 'ReCircle',
@@ -31,7 +31,7 @@ const projectsData = {
         description: 'ReCircle connects university students to effortlessly buy and sell pre-loved items...',
         techs: ['Laravel', 'Inertia.js', 'React', 'MySQL'],
         liveUrl: 'https://github.com/saublues/recircle',
-        mockupImg: project2, 
+        mockupImg: recircleScroll, 
     },
     '3': {
         title: 'Resik Laundry',
@@ -73,7 +73,7 @@ const projectsData = {
         description: 'Modern Furniture E-Commerce — A minimalist digital storefront featuring seamless checkout, robust inventory management, and immersive product showcases.',
         techs: ['Laravel', 'React', 'Tailwind CSS', 'Supabase'],
         liveUrl: '/',
-        mockupImg: vora, // Sesuaikan variabel image-nya
+        mockupImg: voraScroll, // Sesuaikan variabel image-nya
     }
 }
 
@@ -198,15 +198,6 @@ export default function ProjectDetail() {
                         >
                             <MacBookMockup imageSrc={project.mockupImg} alt={`${project.title} Interface Mockup`} />
                             
-                            {/* Optional: Add extra mobile mockups or descriptive grids below the macbook here */}
-                            <div className="mt-16 grid grid-cols-2 gap-4">
-                                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
-                                    <span className="text-xs text-slate-400 dark:text-slate-500 tracking-widest uppercase font-semibold">Mobile View (TBD)</span>
-                                </div>
-                                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 rounded-2xl h-64 lg:h-80 flex items-center justify-center">
-                                    <span className="text-xs text-slate-400 dark:text-slate-500 tracking-widest uppercase font-semibold">Feature Detail (TBD)</span>
-                                </div>
-                            </div>
                         </motion.div>
                     </div>
                 </div>

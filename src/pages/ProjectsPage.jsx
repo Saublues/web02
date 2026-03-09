@@ -8,12 +8,13 @@ import {
 } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import Header from "../components/Header";
-import project1 from "../assets/images/project-1.png";
-import project2 from "../assets/images/project-2.png";
+import saintara from "../assets/images/saintara.jpeg";
+import recircle from "../assets/images/recircle.jpeg";
 import resiklaundry from "../assets/images/resik-laundry.png";
 import suryakshana from "../assets/images/suryakshana.jpeg";
 import henmultimedia from "../assets/images/HenMultimedia.png";
 import dauhanet from "../assets/images/dauhanet.png";
+import vora from "../assets/images/vora.jpeg"
 
 /* ── Data ─────────────────────────────────────────── */
 const allProjects = [
@@ -24,7 +25,7 @@ const allProjects = [
     category: "Full-Stack",
     description:
       "Character Testing App — a personality assessment platform built with Laravel Breeze, React, and Inertia.js.",
-    image: project1,
+    image: saintara,
     span: "md:col-span-2",
     radius: "24px 80px 24px 24px",
   },
@@ -35,7 +36,7 @@ const allProjects = [
     category: "Full-Stack",
     description:
       "Student Preloved Marketplace — connecting IPB University students to buy and sell pre-loved items sustainably.",
-    image: project2,
+    image: recircle,
     span: "",
     radius: "60px 24px 24px 60px",
   },
@@ -80,6 +81,17 @@ const allProjects = [
       category: 'Frontend',
       description: 'Premium Gaming Hub & Cafe Catalog— a high-performance, responsive web platform for managing gaming sessions and F&B services with premium UI/UX.',
       image: dauhanet,
+      span: '',
+      radius: '24px 60px 60px 24px',
+  },
+
+  {
+      id: 7,
+      title: 'VORA',
+      tag: 'Laravel + React + Tailwind + Supabase',
+      category: 'Frontend',
+      description: 'Premium Furniture E-Commerce — A minimalist digital storefront featuring seamless checkout, robust inventory management, and immersive product showcases.',
+      image: vora,
       span: '',
       radius: '24px 60px 60px 24px',
   },
